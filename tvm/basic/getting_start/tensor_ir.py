@@ -81,6 +81,8 @@ block_Y = sch.get_block("Y", "mm_relu")
 sch.decompose_reduction(block_Y, k)
 sch.mod.show()
 
+print(sch.trace)
+
 # build target
 rt_lib = tvm.build(MyMatmul, target="llvm")
 
